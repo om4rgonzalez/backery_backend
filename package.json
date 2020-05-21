@@ -1,26 +1,26 @@
 {
-  "name": "backery_backend",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/om4rgonzalez/backery_backend.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/om4rgonzalez/backery_backend/issues"
-  },
-  "homepage": "https://github.com/om4rgonzalez/backery_backend#readme",
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
-    "mocha": "^7.1.2",
-    "mysql2": "^2.1.0",
-    "supertest": "^4.0.2"
-  }
+    "name": "backery_backend",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "nodemon --exec 'mocha -R min'"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/om4rgonzalez/backery_backend.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/om4rgonzalez/backery_backend/issues"
+    },
+    "homepage": "https://github.com/om4rgonzalez/backery_backend#readme",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "express": "^4.17.1",
+        "mocha": "^7.1.2",
+        "mysql2": "^2.1.0",
+        "supertest": "^4.0.2"
+    }
 }
