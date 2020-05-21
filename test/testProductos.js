@@ -1,13 +1,18 @@
 const assert = require("assert");
-const request = erquire("supertest");
+const chai = require("chai");
+const chaiHttp = require("chai-http");
 const app = require("../server/server");
+
+chai.should();
+chai.use(chaiHttp);
 
 describe("Testing Products module", () => {
     it("Handles GET request /products", done => {
-        request(app)
+        chai.request(app)
             .get('/products')
             .end((err, response) => {
-                assert(response.body.ok == true);
+                response.should.have.status(200);
+                response.body.ok.should.be.not.eq('ERROR');
                 done();
             });
     });
