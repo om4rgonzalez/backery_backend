@@ -16,4 +16,14 @@ describe("Testing Products module", () => {
                 done();
             });
     });
+
+    it("Handles GET request /products?name=mig", done => {
+        chai.request(app)
+            .get('/products?name=mig')
+            .end((err, response) => {
+                response.should.have.status(200);
+                response.body.ok.should.be.not.eq('ERROR');
+                done();
+            });
+    });
 });
