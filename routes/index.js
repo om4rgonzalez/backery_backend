@@ -8,8 +8,8 @@ router.use(bodyParser.json())
 
 
 
-// router.use(require('./customers'));
-// router.use(require('./providers'));
+router.use(require('./product'));
+router.use(require('./production'));
 
 
 

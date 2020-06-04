@@ -1,17 +1,15 @@
 const bodyParser = require('body-parser'); //bodyParser nos permite reicibir parametros por POST
 const { Router } = require('express');
 const router = Router();
-const productController = require('../controller/productController');
+const productionController = require('../controller/productionController');
 
 router.use(bodyParser.urlencoded({ extended: true }))
 router.use(bodyParser.json());
 
-router.get('/products', async function(req, res) {
-    console.log('Llega la peticion a get products');
-    let response = await productController.getProducts();
+router.post('/production/', async function(req, res) {
+    let response = await productionController.startProduction(req.body.production);
     res.json(response);
 });
-
 
 
 

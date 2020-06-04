@@ -1,10 +1,10 @@
 const mysql = require('mysql2');
 
 const mysqlConnection = mysql.createPool({
-    host: '66.97.39.33',
-    user: 'root',
-    password: 'Pascal123!',
-    database: 'dbTurnos',
+    host: '66.97.38.48',
+    user: 'jorge',
+    password: 'Bintelligence123!',
+    database: 'dbBackery',
     multipleStatements: true
 });
 
