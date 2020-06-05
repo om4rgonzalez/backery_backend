@@ -45,7 +45,6 @@ getProducts = async() => {
 
 
 
-
 var utils = {
     setProduct(products, rows) {
         rows.forEach(element => {
@@ -67,6 +66,8 @@ var utils = {
                 }
             }
         });
+
+        return products;
     },
     setElaboration(product, rows) {
         rows.forEach(element => {
