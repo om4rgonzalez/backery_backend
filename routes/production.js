@@ -12,17 +12,17 @@ router.post('/production/', async function(req, res) {
 });
 
 router.get('/production', async function(req, res) {
-    let response = await productionController.getProductionsByDate(req.query.start + ' 00:00:00', req.query.end + '23:59:59');
+    let response = await productionController.getProductionsByDate(req.query.start + ' 00:00:00', req.query.end + ' 23:59:59');
     res.json(response);
 });
 
 router.get('/production/used_supplies', async function(req, res) {
-    let response = await productionController.getTotalUSedSupplies(req.query.start + ' 00:00:00', req.query.end + '23:59:59');
+    let response = await productionController.getTotalUSedSupplies(req.query.start + ' 00:00:00', req.query.end + ' 23:59:59');
     res.json(response);
 });
 
 router.get('/production/consumed_supplies', async function(req, res) {
-    let response = await productionController.getSuppliesConsumedByProductByPeriod(req.query.start + ' 00:00:00', req.query.end + '23:59:59', req.query.supplyId);
+    let response = await productionController.getSuppliesConsumedByProductByPeriod(req.query.start + ' 00:00:00', req.query.end + ' 23:59:59', req.query.supplyId);
     res.json(response);
 });
 
