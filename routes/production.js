@@ -19,8 +19,7 @@ router.use(bodyParser.json());
  */
 router.post('/production/', async function(req, res) {
     console.log('Llega la peticion para iniciar la produccion');
-    console.log(req.body);
-    let response = await productionController.startProduction(req.body.production);
+    let response = await productionController.startProduction(req.body);
     res.json(response);
 });
 
