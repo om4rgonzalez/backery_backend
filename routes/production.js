@@ -6,6 +6,17 @@ const productionController = require('../controller/productionController');
 router.use(bodyParser.urlencoded({ extended: true }))
 router.use(bodyParser.json());
 
+/**
+ * @swagger
+ * /production/:
+ *  get:
+ *    tag:
+ *    - production
+ *    description: Start the production for a product
+ *    responses:
+ *      '200':
+ *        description: A successful response
+ */
 router.post('/production/', async function(req, res) {
     let response = await productionController.startProduction(req.body.production);
     res.json(response);

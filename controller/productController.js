@@ -76,6 +76,7 @@ var utils = {
                     product.elaborations.push({
                         elaborationId: element.ELABORATION_ID,
                         elaborationName: element.ELABORATION_NAME,
+                        elaborationUnit: element.ELABORATION_UNIT,
                         process: [],
                         supplies: []
                     });
@@ -84,6 +85,7 @@ var utils = {
                         product.elaborations.push({
                             elaborationId: element.ELABORATION_ID,
                             elaborationName: element.ELABORATION_NAME,
+                            elaborationUnit: element.ELABORATION_UNIT,
                             process: [],
                             supplies: []
                         });
