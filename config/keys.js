@@ -2,16 +2,11 @@ module.exports = {
 
     database: {
         connectionLimit: 10,
-        host: '66.97.38.48',
-        user: 'jorge',
-        password: 'Bintelligence123!',
-        database: 'dbBackery',
+        host: process.env.URLDB,
+        user: process.env.DBUSER,
+        password: process.env.DBPASS,
+        database: process.env.DBNAME,
         multipleStatements: true
-            //     host: '66.97.38.48',
-            //     user: 'jorge',
-            //     password: 'Bintelligence123!',
-            //     database: 'dbFullmayorista',
-            //     multipleStatements: true
     }
 
 };

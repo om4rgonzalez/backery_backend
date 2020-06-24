@@ -9,14 +9,23 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'dev;'
 
 //base de datos
 let urlDB;
-// if (process.env.NODE_ENV == 'prod') {
-//     urlDB = 'mongodb://localhost:27017/sur-creditos';
-// } else {
-//     urlDB = 'mongodb://sa:Bintech123@ds139920.mlab.com:39920/db_sur_creditos'
-// }
+if (process.env.NODE_ENV == 'prod') {
+    urlDB = process.env.DB_HOST;
+    dbUSer = process.env.DB_USER;
+    dbPass = process.env.DB_PASS;
+    dbName = process.env.DB_NAME;
+} else {
+    urlDB = 'localhost'
+    dbUSer = 'admin';
+    dbPass = 'admin';
+    dbName = 'test';
+}
 
 
 process.env.URLDB = urlDB;
+process.env.DBUSER = dbUSer;
+process.env.DBPASS = dbPass;
+process.env.DBNAME = dbName;
 
 // ============================
 //  Vencimiento del Token
