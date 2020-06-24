@@ -167,7 +167,7 @@ var utils = {
         return true;
     },
     addSupply(productionId, supply) {
-        let q = 'CALL PROC_ADD_SUPPLY_TO_PRODUCTION(' + supply.supplyId + ', "' + supply.unitType + '", ' + supply.quantity + ', ' + productionId + ')';
+        let q = 'CALL PROC_ADD_SUPPLY_TO_PRODUCTION(' + supply.supplyId + ', "' + supply.measureUnit + '", ' + supply.measureValue + ', ' + productionId + ')';
         console.log(q);
         wrapperConnection.execute(q);
         return true;

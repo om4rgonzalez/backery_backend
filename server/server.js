@@ -2,6 +2,8 @@ require('../config/config');
 const mysqlConnection = require('../data/datamanager');
 const express = require('express');
 const app = express();
+const swaggerJsDoc = require("swagger-jsdoc");
+const swaggerUi = require("swagger-ui-express");
 
 
 //////////////////////////////////
@@ -15,6 +17,36 @@ app.use((req, res, next) => {
 
     next();
 });
+
+// Extended: https://swagger.io/specification/#infoObject
+const swaggerOptions = {
+    swaggerDefinition: {
+        info: {
+            version: "1.0.0",
+            title: "Backery API",
+            description: "Backery API",
+            contact: {
+                name: "Omar Marcelo Gonzalez",
+                email: "om4r.gonzalez@gmail.com"
+            },
+            servers: ["http://bintelligence.net:3003"],
+            tags: [{
+                    name: "product",
+                    description: "Everything about products admin"
+                },
+                {
+                    name: "production",
+                    description: "Access to productiosn reports and process"
+                }
+            ]
+        }
+    },
+    // ['.routes/*.js']
+    apis: ['./routes/*.js']
+};
+
+const swaggerDocs = swaggerJsDoc(swaggerOptions);
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 
 //indice de rutas
